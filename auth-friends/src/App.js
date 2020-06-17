@@ -1,6 +1,6 @@
 import React from 'react';
 import Login from './components/Login';
-import { BrowserRouter as Router, Route, Link, Switch, useHistory } from 'react-router-dom';
+import { Route, Link, Switch, useHistory } from 'react-router-dom';
 import FriendsList from './components/FriendsList';
 import FriendsForm from './components/FriendsForm';
 import PrivateRoute from './components/PrivateRoute';

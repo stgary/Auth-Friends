@@ -109,11 +109,13 @@ const FriendsList = () => {
                 ) : (
                    friends.map(friend => (
                         <div className='friend'>
-                            <div><p>Name: {friend.name}</p>
-                            <p>Email: {friend.email}</p>
-                            <p>Age: {friend.age}</p>
-                            <button onClick={() => {dl(friend.id)}}>Delete</button>
-                            <button onClick={() => {edit(friend)}}>Edit</button></div>
+                            <div>
+                                <p>Name: {friend.name}</p>
+                                <p>Email: {friend.email}</p>
+                                <p>Age: {friend.age}</p>
+                                <button onClick={() => {dl(friend.id)}}>Delete</button>
+                                <button onClick={() => {edit(friend)}}>Edit</button>
+                            </div>
                         </div>
                     ))
                 )}
