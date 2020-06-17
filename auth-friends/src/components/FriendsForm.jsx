@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { v4 as uuid } from 'uuid';
+import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
-import FriendsList from './FriendsList';
-import { Route, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const initialFormValues = {
     name: '',
@@ -19,7 +17,6 @@ const FriendsForm = () => {
         e.preventDefault();
         
         const newFriend = {
-            id: uuid(),
             name: formValues.name,
             age: formValues.age,
             email: formValues.email

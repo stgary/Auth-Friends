@@ -1,20 +1,27 @@
-import React, { useState, useHistory } from 'react';
+import React from 'react';
 import Login from './components/Login';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch, useHistory } from 'react-router-dom';
 import FriendsList from './components/FriendsList';
 import FriendsForm from './components/FriendsForm';
 import PrivateRoute from './components/PrivateRoute';
 
-
 function App() {
+
+  const history = useHistory();
+  
+  const handleChange = e => {
+    window.localStorage.removeItem('token');
+    history.push('/login')
+  };
+ 
   return (
-    <Router>
       <div className="App">
         <header>
           <nav>
             <Link to="/login">Login</Link>
             <Link to="/list">Friends List</Link>
             <Link to="/form">Add Friends</Link>
+            <button onClick={handleChange}>Log Out</button>
             </nav>
         </header>
         <Switch>
@@ -23,7 +30,6 @@ function App() {
           <PrivateRoute exact path='/form' component={FriendsForm} />
         </Switch>
       </div>
-    </Router>
   );
 }
 
