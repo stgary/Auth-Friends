@@ -3,7 +3,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(rgb(51, 54, 54), rgb(12, 191, 214));
+  background: linear-gradient(rgb(227, 230, 231), rgb(47, 54, 55));
 }
 
 header {
@@ -55,8 +55,8 @@ button {
   margin: 10px;
   color: #333333;
   border: 1px solid #413f3f;
-  background-color: #1ec0a9;
-  border-radius: 2px;
+  background-color: rgb(227, 230, 231);
+  border-radius: 2%;
   width: 80px;
   box-shadow: 3px 6px 20px 2px #0202026e;
   font-size: .75rem;

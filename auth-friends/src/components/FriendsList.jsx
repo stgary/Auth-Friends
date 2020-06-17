@@ -22,7 +22,6 @@ const FriendsList = () => {
         axiosWithAuth()
         .delete(`/api/friends/${id}`)
         .then(res => {
-            console.log(res)
             setRefresh(!refresh)
         })
         .catch(err => console.log(err))
@@ -40,7 +39,6 @@ const FriendsList = () => {
         axiosWithAuth()
         .put(`/api/friends/${editFriend.id}`, edited)
         .then(res => {
-            console.log(res);
             setEditFriend({});
             setIsEditing(false);
             setRefresh(!refresh);
