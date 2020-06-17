@@ -46,35 +46,33 @@ const FriendsForm = () => {
 
 
     return (
-        <div>
-        <form onSubmit={handleSubmit}>
-        <label>Name: 
-            <input
-                type="text"
-                name="name"
-                value={formValues.name}
-                onChange={handleChange}
-            />
-          </label>
-          <label>Age:
-            <input
-                type="text"
-                name="age"
-                value={formValues.age}
-                onChange={handleChange}
-            />
-          </label>
-          <label>Email:
-            <input
-                type="email"
-                name="email"
-                value={formValues.email}
-                onChange={handleChange}
-            />
-        </label>
-          <button>Add Friend</button>
-        </form>
-      </div>
+        <div className='container'>
+            <h6>Add Friends</h6>
+            <form onSubmit={handleSubmit}>
+                <label>Name</label>
+                <input
+                    type="text"
+                    name="name"
+                    value={formValues.name}
+                    onChange={handleChange}
+                />
+                <label>Age</label>
+                <input
+                    type="text"
+                    name="age"
+                    value={formValues.age}
+                    onChange={handleChange}
+                />
+                <label>Email</label>
+                <input
+                    type="email"
+                    name="email"
+                    value={formValues.email}
+                    onChange={handleChange}
+                />
+                <button>Submit</button>
+            </form>
+        </div>
     );
 };
 

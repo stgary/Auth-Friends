@@ -16,9 +16,9 @@ const FriendsList = () => {
     }, [])
 
     return (
-        <div>
+        <div className='friend-container'>
             {friends.map(friend => (
-            <div>
+            <div className='friend'>
                 <p>Name: {friend.name}</p>
                 <p>Email: {friend.email}</p>
                 <p>Age: {friend.age}</p>

@@ -38,23 +38,26 @@ const Login = () => {
 
 
     return (
-        <div>
-        <form onSubmit={login}>
-          <input
-            type="text"
-            name="username"
-            value={credentials.username}
-            onChange={handleChange}
-          />
-          <input
-            type="password"
-            name="password"
-            value={credentials.password}
-            onChange={handleChange}
-          />
-          <button>Log in</button>
-        </form>
-      </div>
+        <div className='form-container'>
+            <h6>Sign In</h6>
+            <form onSubmit={login}>
+                <label>Username</label> 
+                <input
+                    type="text"
+                    name="username"
+                    value={credentials.username}
+                    onChange={handleChange}
+                />
+            <label>Password</label>
+            <input
+                type="password"
+                name="password"
+                value={credentials.password}
+                onChange={handleChange}
+            />
+            <button>Log in</button>
+            </form>
+        </div>
     );
 };
 
