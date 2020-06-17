@@ -11,30 +11,30 @@ const Login = () => {
 
     const history = useHistory();
     
-  const handleChange = e => {
-    const name = e.target.name;
-    const value = e.target.value;
-    
-    setCredentials({
-        ...credentials,
-        [name]: value
-    })
-  };
+    const handleChange = e => {
+        const name = e.target.name;
+        const value = e.target.value;
+        
+        setCredentials({
+            ...credentials,
+            [name]: value
+        })
+    };
 
-  const login = e => {
-    e.preventDefault();
+    const login = e => {
+        e.preventDefault();
 
-    axiosWithAuth()
-      .post('/api/login', credentials)
-      .then(res => {
-        console.log(res);
-        window.localStorage.setItem("token", res.data.payload);
-        history.push('/list');
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
+        axiosWithAuth()
+        .post('/api/login', credentials)
+        .then(res => {
+            console.log(res);
+            window.localStorage.setItem("token", res.data.payload);
+            history.push('/list');
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    };
 
 
     return (

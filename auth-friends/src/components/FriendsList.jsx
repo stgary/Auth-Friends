@@ -66,7 +66,6 @@ const FriendsList = () => {
         setEditFriend(fr);
     }
 
-
     return (
         <div>
             <div className='wrapper'>
