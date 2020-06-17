@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { useForm } from "../hooks/useForm";
 
 const FriendsList = () => {
 
-    const [formValues, setFormValues] = useState({});
+    const [formValues, handleChange] = useForm({
+        name: '',
+        age: '',
+        email: ''
+    });
     const [friends, setFriends] = useState([]);
     const [refresh, setRefresh] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
@@ -44,21 +49,6 @@ const FriendsList = () => {
             setRefresh(!refresh);
         })
         .catch(err => console.log(err))
-        .finally(setFormValues({
-            name: '',
-            email: '',
-            age: ''
-        }))
-    };
-
-    const handleChange = e => {
-        const name  = e.target.name;
-        const value  = e.target.value;
-
-        setFormValues({
-            ...formValues,
-            [name]: value
-        });
     };
 
     const edit = fr => {

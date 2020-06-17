@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
-
-const initialFormValues = {
-    name: '',
-    age: '',
-    email: ''
-}
+import { useForm } from "../hooks/useForm";
 
 const FriendsForm = () => {
 
-    const [formValues, setFormValues] = useState(initialFormValues);
+    const [formValues, handleChange] = useForm({
+        name: '',
+        age: '',
+        email: ''
+    });
     const history = useHistory();
 
     const handleSubmit = e => {
@@ -28,19 +27,7 @@ const FriendsForm = () => {
             history.push('/list')
         })
         .catch(err => console.log(err))
-        .finally(setFormValues(initialFormValues))
     };
-
-    const handleChange = e => {
-        const name  = e.target.name;
-        const value  = e.target.value;
-
-        setFormValues({
-            ...formValues,
-            [name]: value
-        });
-    };
-
 
     return (
         <div className='container'>

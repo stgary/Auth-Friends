@@ -6,22 +6,20 @@ import FriendsForm from './components/FriendsForm';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
-
   const history = useHistory();
-  
-  const handleChange = e => {
-    window.localStorage.removeItem('token');
-    history.push('/login')
-  };
- 
+
   return (
       <div className="App">
+        <div className='bg'></div>
         <header>
           <nav>
             <Link to="/login">Login</Link>
             <Link to="/list">Friends List</Link>
             <Link to="/form">Add Friends</Link>
-            <button onClick={handleChange}>Log Out</button>
+            <Link onClick={ () => {
+              window.localStorage.removeItem('token');
+              history.push('/login')
+            }}>Log Out</Link>
             </nav>
         </header>
         <Switch>
